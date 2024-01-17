@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Animated Light Bulb</title>
+<link rel="stylesheet" href="style.css">
+<style>
+    .bulb {
+        position: relative;
+        width: 100px;
+        height: 150px;
+        margin: 50px auto;
+      }
+      
+      #bulbImage {
+        width: 100%;
+        height: 100%;
+        transition: opacity 0.5s ease-in-out;
+      }
+      
+      #toggleButton {
+        position: absolute;
+        bottom: -30px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #f44336; /* Red */
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      
+      #toggleButton:hover {
+        background-color: #e53935; /* Darker red */
+      }
+      
+
+
+
+</style>
+</head>
+<body>
+  <div class="bulb">
+    <img src="bulb-off.png" alt="Light Bulb" id="bulbImage">
+  </div>
+  <button id="toggleButton">Turn ON</button>
+  <script>
+    const bulbImage = document.getElementById("bulbImage");
+    const toggleButton = document.getElementById("toggleButton");
+    
+    let isOn = false;  // Initial state
+    
+    toggleButton.addEventListener("click", () => {
+      isOn = !isOn;
+    
+      if (isOn) {
+        bulbImage.src = "bulb-on.png";
+        toggleButton.textContent = "Turn OFF";
+      } else {
+        bulbImage.src = "bulb-off.png";
+        toggleButton.textContent = "Turn ON";
+      }
+    });
+    
+
+
+  </script>
+</body>
+</html>
